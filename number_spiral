@@ -1,0 +1,72 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+#include<bits/stdc++.h>
+#ifdef LOCAL
+#include"bits/degbug.h"
+#else
+#define dbg(...) 0
+#endif // LOCAL
+#define pb push_back
+#define ll long long int
+#define Q int t;cin>>t;while(t--)
+
+const ll mod=1000000007;
+
+using namespace std;
+
+
+int main()
+{
+    Q
+    {
+        ll x,y;
+        cin>>x>>y;
+
+        ll s=0;
+        if(x%2==0)
+        {
+            s=x*x;
+            if(y<=x)s=s-y+1;
+            //else {break;}
+            else
+            {
+                if(y%2!=0)
+                {
+                    s=y*y;
+                    if(x<=y)s=s-x+1;
+                    //else {break;}
+                }
+                else
+                {
+                    s=(y-1)*(y-1);
+                    if(x<=y)s=s+x;
+                    //else{break;}
+                }
+            }
+        }
+        else
+        {
+            s=(x-1)*(x-1);
+            if(y<=x)s=s+y;
+            //else {break;}
+            else
+            {
+                if(y%2!=0)
+                {
+                    s=y*y;
+                    if(x<=y)s=s-x+1;
+                    //else {break;}
+                }
+                else
+                {
+                    s=(y-1)*(y-1);
+                    if(x<=y)s=s+x;
+                    //else{break;}
+                }
+            }
+        }
+
+        cout<<s<<endl;
+    }
+}
